@@ -1,9 +1,8 @@
 import board
 import busio
 import digitalio
-import displayio
-import os
 import storage
+import time
 import adafruit_ili9341
 import adafruit_sdcard
 from fourwire import FourWire
@@ -21,15 +20,17 @@ display_bus = FourWire(spi, command=board.D10, chip_select=board.D9, reset=board
 display = adafruit_ili9341.ILI9341(display_bus, width=320, height=240)
 
 # Make the display context
-splash = displayio.Group()
-display.root_group = splash
+screen = displayio.Group()
+display.root_group = screen
 
-test_bitmap = displayio.OnDiskBitmap("/sd/head-on.bmp")
-test_tile_grid = displayio.TileGrid(test_bitmap, pixel_shader=test_bitmap.pixel_shader)
+image_files = ["/sd/head-on.bmp", "/sd/haribo-sad.bmp", "/sd/smoke-tarrlytons.bmp"]
 
-#test_tile_grid.y = (display.height - test_bitmap.height) // 2
-
-splash.append(test_tile_grid)
+# Temp placeholder before loop below
+screen.append(displayio.Group())
 
 while True:
-    pass
+    for file in image_files:
+        bmp = displayio.OnDiskBitmap(file)
+
+        screen[0] = displayio.TileGrid(bmp, pixel_shader=bmp.pixel_shader)
+        time.sleep(5)
