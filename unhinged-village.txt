@@ -1,0 +1,44 @@
+Haribo Factory
+
+	Electronics
+		* Arduino
+			- Uno (may have somewhere)
+			- Nano (will it work with everything?)
+		* Stepper Motor
+			- Motor itself (https://www.adafruit.com/product/324)
+			- Motor driver
+				-- Can get an AIO shield like https://www.adafruit.com/product/1438
+		* Audio playback
+			- Playback module (https://www.dfrobot.com/product-1121.html)
+			- Mono speaker (https://www.dfrobot.com/product-1506.html)
+
+	Teensy-based build
+		* Teensy 4.1 (adafruit)
+		* Teensy 4 Audio Shield (adafruit)
+		* Stepper motor driver breakout board (adafruit)
+		* Stepper motor (adafruit)
+		* Arcade-style button & connectors (adafruit)
+
+
+Billboard
+	* [have] 2.2" TFT Dispaly (https://www.adafruit.com/product/1480)
+	* [have] 18 pin SPI cable 200mm (https://www.adafruit.com/product/5240)
+	* [ordered] EYESPI breakout board (https://www.adafruit.com/product/5613)
+	* [ordered] Feather M4 Express (https://www.adafruit.com/product/3857)
+
+	Notes:
+		* Initially try using Arduino studio and the existing libraries referenced below
+			** This means the Feather board needs to be setup in Arduino studio to accept code
+
+	Resources:
+		* Wiring example with display -> breakout board -> Feather (https://learn.adafruit.com/2-2-tft-display/eyespi)
+		* Another tutorial with the focus on the breakout board (https://learn.adafruit.com/adafruit-eyespi-breakout-board/overview)
+		* Feather board Arduino setup (https://learn.adafruit.com/adafruit-feather-m4-express-atsamd51/setup)
+		* Code example doing slideshow off of SD card (https://github.com/bitbank2/PNGdec/blob/master/examples/sdcard_slideshow/sdcard_slideshow.ino)
+		* Library for using the ILI9341 display in code -- see example in examples/spitftbitmap folder (https://github.com/bitbank2/PNGdec/blob/master/examples/sdcard_slideshow/sdcard_slideshow.inod)
+		* Thread with more details about the above links and displaying saved images to our display type (https://forum.arduino.cc/t/displaying-pngs-on-ili9341-without-lvgl/1405789)
+
+	Next Steps:
+		* Create mount for display in Fusion
+		* Work on the billboard structure and design
+		* Once parts get delivered work on code for displaying images
