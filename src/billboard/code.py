@@ -25,6 +25,7 @@ screen = displayio.Group()
 display.root_group = screen
 
 image_files = [
+    "/sd/destroy.bmp",
     "/sd/head-on.bmp",
     "/sd/haribo-sad.bmp",
     "/sd/smoke-tarrlytons.bmp",
